@@ -22,7 +22,17 @@
 
 <% else %>
 <h4><%= @user.email %> Profile Page </h4>
+<%= link_to "Add friend",  friendship_create_path(@user.id)   %>
 <% end %>
+
+<h2> friends </h2>
+<ul>
+    <% all_friends=@user.get_all_friends %>
+    <%  all_friends.each do |f| %>
+        <li> <%= f.email %> </li>
+    <% end %>
+
+</ul>
 
 
 <script type="text/javascript">

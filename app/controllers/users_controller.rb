@@ -26,8 +26,13 @@ class UsersController < ApplicationController
 			email: params[:user][:email],
 			profile_picture: params[:user][:profile_picture]
 			)
-		byebug
+		
 		return redirect_to user_show_path(user.id)
+	end
+
+	def find_friends
+		@users=User.all
+		
 	end
 
 end

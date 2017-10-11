@@ -1,0 +1,10 @@
+<% friends=current_user.get_all_friends %>
+<% @users.each do |u| %>
+	<% if u!=current_user %>
+		<% if !(friends.include? u) %>
+			<li>  <%= u.email %>  </li>
+			<%= link_to "Add friend" , friendship_create_path(u.id) %>
+		<% end %>
+	<% end %>
+	
+<% end %>

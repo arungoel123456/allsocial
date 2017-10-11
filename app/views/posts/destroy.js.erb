@@ -1,1 +1,8 @@
 $('#post-<%= @post_id %>').remove();
+
+noty({
+	text: 'Post deleted',
+	type: 'success',
+	timeout: 2000
+
+});	
